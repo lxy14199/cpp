@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+#include <algorithm>
+using namespace std;
 
 struct Job_type{ 
 	int no;  //作业号
@@ -26,26 +29,23 @@ void load(){
 	}
 }
 
+bool cmp(Job_type a, Job_type b) {
+	return a.tb < b.tb;
+}
+
 void fcfs(){
 	//********************************************************
-	
-	
-	
-	
-	
-	
+	sort(job, job + n, cmp);
 	//========================================================
 	
 	printf("FCFSsjf调度结果:\n");
 	printf("   开始时间 作业号 到达时间 运行时间 完成时间 等待时间 周转时间\n");
 	
 	//********************************************************
-	
-	
-	
-	
-	
-	
+	int s = 0;
+	for(int i = 0; i < n; i ++) {
+		printf("\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n", s, job[i].no,job[i].tb,job[i].tr, s + job[i].tb, s - job[i].tb, s + job[i].tr);
+	}
 	//========================================================
 }
 
