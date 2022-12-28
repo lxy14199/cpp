@@ -44,7 +44,8 @@ void fcfs(){
 	//********************************************************
 	int s = 0;
 	for(int i = 0; i < n; i ++) {
-		printf("\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n", s, job[i].no,job[i].tb,job[i].tr, s + job[i].tb, s - job[i].tb, s + job[i].tr);
+		printf("\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n", s, job[i].no,job[i].tb,job[i].tr, s + job[i].tr, s - job[i].tb, s + job[i].tr - job[i].tb);
+		s += job[i].tr;
 	}
 	//========================================================
 }
